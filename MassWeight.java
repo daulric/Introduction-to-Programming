@@ -8,7 +8,7 @@ public class MassWeight {
 
         try ( Scanner mass_input = new Scanner(System.in); ) { // Safe space for scanner
             System.out.print("Enter Mass in Kg: ");
-            int mass = mass_input.nextInt(); // Get the user input for kg
+            double mass = mass_input.nextDouble(); // Get the user input for kg
 
             double conversion = (mass * newton); // Convert kg to newton
 
