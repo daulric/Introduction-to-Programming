@@ -13,4 +13,4 @@ int main() {
     cout << "Profit Made is $" << profit_gain << endl;
 
     return 0;
-} 
+}
