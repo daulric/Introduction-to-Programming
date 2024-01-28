@@ -37,7 +37,7 @@ int main() {
 
     // Checking and Outputing!!
     if (ReactangleArea1 > ReactangleArea2) {
-        cout << "Rectangle 1 is greater that rectangle 2";
+        cout << "Rectangle 1 is greater that Rectangle 2";
     } else if (ReactangleArea2 > ReactangleArea1) {
         cout << "Rectangle 2 is greater than Rectangle 1";
     } else {

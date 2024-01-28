@@ -1,4 +1,4 @@
 /.vscode
-/Java/*.class
 *.exe
+*.class
 /Assignments/PersonalInfo.cpp
