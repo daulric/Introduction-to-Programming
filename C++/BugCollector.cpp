@@ -6,7 +6,7 @@ using namespace std;
 
 int main() {
 
-    int totalBugs, bugsInput = 0;
+    int totalBugs = 0, bugsInput = 0;
 
     cout << "==== Bugs Collector ====" << endl;
 
