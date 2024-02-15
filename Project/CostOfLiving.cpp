@@ -39,9 +39,9 @@ double NIS_Insurance(double pay_check) {
     return NIS_Deduction;
 }
 
-double SurvivalCost(double pay_check) {
+double OtherExpenses(double pay_check) {
     // This is the cost if you have to pay for cost of living!
-    double groceries_cost, gas_cost, rent;
+    double groceries_cost, gas_cost, rent, loan_payment, light_bill, water_bill, internet_bill;
 
     cout << "Enter Groceries Cost: $";
     cin >> groceries_cost;
@@ -49,8 +49,16 @@ double SurvivalCost(double pay_check) {
     cin >> gas_cost;
     cout << "Enter Rent: $";
     cin >> rent;
+    cout << "Enter Loan Payment: $";
+    cin >> loan_payment;
+    cout << "Enter Light Bill: $";
+    cin >> light_bill;
+    cout << "Enter Water Bill: $";
+    cin >> water_bill;
+    cout << "Enter Internet Bill: $";
+    cin >> internet_bill;
 
-    double additional_cost = (groceries_cost + gas_cost + rent);
+    double additional_cost = (groceries_cost + gas_cost + rent + loan_payment + water_bill + light_bill + internet_bill);
     return additional_cost;
 }
 
@@ -60,13 +68,13 @@ int main() {
     cout << "Enter Your Monthly Paycheck: $";
     cin >> pay_check;
 
-    double Survival_Cost = SurvivalCost(pay_check);
+    double Expenses = OtherExpenses(pay_check);
     double Gov_Tax = GovTaxOwed(pay_check); // Government Tax
     double NIS = NIS_Insurance(pay_check); // NIS Insurance Tax
 
     double Total_Tax = NIS + Gov_Tax; // Total Tax
 
-    double MoneySpent = (Total_Tax + Survival_Cost); // Money Spent on Tax and Basic Nessessity
+    double MoneySpent = (Total_Tax + Expenses); // Money Spent on Tax and Basic Nessessity
     double TakeHome = (pay_check - MoneySpent); // Take Home Money
 
     // Display or Output the Information
@@ -79,7 +87,7 @@ int main() {
     cout << "Total Tax Paid: $" << Total_Tax << endl << endl;
 
     cout << "--------- Other Expenses ----------" << endl;
-    cout << "Basic Nessessity Expenses: $" << Survival_Cost << endl;
+    cout << "Basic Nessessity Expenses: $" << Expenses << endl;
     cout << "Total Expenses: $" << MoneySpent << endl;
     cout <<  "Take Home Amount: $" << TakeHome << endl;
     cout << "-----------------------------------" << endl;
