@@ -1,0 +1,83 @@
+Module GovTaxOwed(Real pay_check)
+    Declare Real TaxRate3000 = 0
+    Declare Real TaxRate5000 = 0
+
+    If pay_check > 3000 Then
+	If pay_check > 5000 Then
+	    TaxRate3000 = (5000 - 3000) * 0.10
+	Else
+	    TaxRate3000 = (pay_check - 3000) * 0.10
+	End If
+    End If
+
+    If pay_check > 5000 Then
+	TaxRate5000 = (pay_check - 5000) * 0.28
+    End If
+
+    Real Gov_Tax = (TaxRate3000 + TaxRate5000)
+    Return Gov_Tax
+End Module
+
+Module NIS_Insurance(Real pay_check)
+    Declare Real NIS_Deduction = 0
+
+    If pay_check > 5000 Then
+	NIS_Deduction = 5000 * 0.055 // NIS Insurance Only Tax up to $5000
+    Else
+	NIS_Deduction = pay_check * 0.055
+    End If
+End Module
+
+Module OtherExpenses(Real pay_check)
+    Declare Real groceries_cost, gas_cost, rent, loan_payment, light_bill, water_bill, internet_bill;
+	
+    Display "Enter Groceries Cost:";
+    Input groceries_cost;
+    Display "Enter Gas Cost:";
+    Input gas_cost;
+    Display "Enter Rent:";
+    Input rent;
+    Display "Enter Loan Payment:";
+    Input loan_payment;
+    Display "Enter Light Bill:";
+    Input light_bill;
+    Display "Enter Water Bill:";
+    Input water_bill;
+    Display "Enter Internet Bill:";
+    Input internet_bill;
+
+    Declare Real additional_cost = (groceries_cost + gas_cost + rent + loan_payment + water_bill + light_bill + internet_bill)
+
+    Return additional_cost
+End Module
+
+Module main()
+    Declare Real pay_check
+
+    Display "Enter Monthly Paycheck:"
+    Input pay_check
+
+    Declare Real Expenses = OtherExpenses(pay_check)
+    Declare Real Gov_Tax = GovTaxOwed(pay_check) 
+    Declare Real NIS = NIS_Insurance(pay_check)
+
+    Declare Total_Tax = NIS + Gov_Tax
+    Declare MoneySpent = Total_Tax + Expenses
+    Declare TakeHome = pay_check - MoneySpent
+
+	// Display or Output the Information
+    Display "\n-------- Pay Check --------------"
+    Display "Pay Check: $", pay_check
+
+    Display " ------------ Tax Paid -------------"
+    Display "NIS Insurance: $", NIS
+    Display "Government Tax: $", Gov_Tax
+    Display "Total Tax Paid: $", Total_Tax
+
+    Display "--------- Other Expenses ----------"
+    Display "Basic Nessessity Expenses: $", Expenses
+    Display "Total Expenses: $", MoneySpent
+    Display  "Take Home Amount: $", TakeHome
+    Display "-----------------------------------"
+
+End Module
