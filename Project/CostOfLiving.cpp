@@ -6,7 +6,7 @@ double GovTaxOwed(double pay_check) {
     double TaxRate3000 = 0;
     double TaxRate5000 = 0;
 
-    // 10% Tax and NIS Deduction
+    // 10% Tax
     if (pay_check > 3000) {
         if (pay_check > 5000) { // Check to see if the amount is more than $5000 to tax the money in between $3000 and $5000
             double MaxOnTaxRate = (5000 - 3000); // Max Tax Bracket for 10% Taxation
@@ -16,7 +16,7 @@ double GovTaxOwed(double pay_check) {
         }
     }
 
-    // Tax the User if the paycheck is more than $5000
+    // Tax the User 28%, if the paycheck is more than $5000
     if (pay_check > 5000) {
         TaxRate5000 = (pay_check - 5000) * 0.28;
     } 
@@ -31,15 +31,16 @@ double NIS_Insurance(double pay_check) {
 
       // NIS Insurance
     if (pay_check > 5000) {
-        NIS_Deduction = 5000 * NIS_Insure_Rate; // this is because NIS only tax up to $5000!
+        NIS_Deduction = 5000 * NIS_Insure_Rate; // NIS Insurance can only tax up to $5,000.
     } else {
-        NIS_Deduction = pay_check * NIS_Insure_Rate; // Gets the Insurance Paid for NIS from the salary!
+        NIS_Deduction = pay_check * NIS_Insure_Rate; // Takes 5.5% Tax from the User's Salary.
     }
 
     return NIS_Deduction;
 }
 
 double SurvivalCost(double pay_check) {
+    // This is the cost if you have to pay for cost of living!
     double groceries_cost, gas_cost, rent;
 
     cout << "Enter Groceries Cost: $";
@@ -60,24 +61,26 @@ int main() {
     cin >> pay_check;
 
     double Survival_Cost = SurvivalCost(pay_check);
-    double Gov_Tax = GovTaxOwed(pay_check);
-    double NIS = NIS_Insurance(pay_check);
+    double Gov_Tax = GovTaxOwed(pay_check); // Government Tax
+    double NIS = NIS_Insurance(pay_check); // NIS Insurance Tax
 
-    double Total_Tax = NIS + Gov_Tax;
+    double Total_Tax = NIS + Gov_Tax; // Total Tax
 
-    double MoneySpent = (Total_Tax + Survival_Cost);
-    double TakeHome = (pay_check - MoneySpent);
+    double MoneySpent = (Total_Tax + Survival_Cost); // Money Spent on Tax and Basic Nessessity
+    double TakeHome = (pay_check - MoneySpent); // Take Home Money
 
-    cout << "\n-------- Calculation --------------" << endl;
-    cout << "Pay Check: $" << pay_check << endl;
+    // Display or Output the Information
+    cout << "\n-------- Pay Check --------------" << endl;
+    cout << "Pay Check: $" << pay_check << endl << endl;
 
-    cout << " ----- Tax -----" << endl;
+    cout << " ------------ Tax Paid -------------" << endl;
     cout << "NIS Insurance: $" << NIS << endl;
     cout << "Government Tax: $" << Gov_Tax << endl;
-    cout << "Total Tax Paid: $" << Total_Tax << endl;
-    cout << "----------------" << endl;
+    cout << "Total Tax Paid: $" << Total_Tax << endl << endl;
 
-    cout << "Total In Tax and Survival: $" << MoneySpent << endl;
+    cout << "--------- Other Expenses ----------" << endl;
+    cout << "Basic Nessessity Expenses: $" << Survival_Cost << endl;
+    cout << "Total Expenses: $" << MoneySpent << endl;
     cout <<  "Take Home Amount: $" << TakeHome << endl;
     cout << "-----------------------------------" << endl;
 
