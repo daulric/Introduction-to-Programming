@@ -11,7 +11,7 @@ int main() {
     cout << "==== Bugs Collector ====" << endl;
 
     for (int i = 1; i <= 7; i++) {
-        cout << "Day " << i << ": ";
+        cout << "How many bugs were collected on day " << i << ": ";
         cin >> bugsInput;
         totalBugs += bugsInput;
     }
