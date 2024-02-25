@@ -1,0 +1,32 @@
+// Rock Paper Scissors PseudoCode Game for Final Project!
+
+Declare String input_val, computer_choice;
+Declare String options[] = {"rock", "paper", "scissors"};
+
+Declare String endProgram;
+Declare Real move;
+
+While endProgram != "n"
+    move = rand() % 3;
+    computer_choice = options[move];
+
+    Display "Rock, Paper, Scissors: ";
+    input input_val;
+    Display "Computer Choice: " << computer_choice << endl;
+
+    If input_val == computer_choice Then
+        Display "Its a Tie" << endl;
+    Else If
+        input_val == "scissors" && computer_choice == "paper" ||
+        input_val == "rock" && computer_choice == "scissors" ||
+        input_val == "paper" && computer_choice == "rock" 
+    Then
+        Display "You Win!!" << endl;
+    Else
+        Display "Computer Win!" << endl;
+    End If
+
+    Display "Do You Want to Play Again: (y = Yes, n = No) ";
+    input endProgram;
+
+End While

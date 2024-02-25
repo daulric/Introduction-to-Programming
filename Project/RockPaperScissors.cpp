@@ -12,7 +12,7 @@ int main() {
     string endProgram = "y";
     int move;
 
-    while (endProgram == "y") {
+    while (endProgram != "n") {
         move = rand() % 3;
         computer_choice = options[move];
 
