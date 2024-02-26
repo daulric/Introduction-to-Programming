@@ -16,10 +16,9 @@ While endProgram != "n"
 
     If input_val == computer_choice Then
         Display "Its a Tie" << endl;
-    Else If
-        input_val == "scissors" && computer_choice == "paper" ||
+    Else If (input_val == "scissors" && computer_choice == "paper" ||
         input_val == "rock" && computer_choice == "scissors" ||
-        input_val == "paper" && computer_choice == "rock" 
+        input_val == "paper" && computer_choice == "rock")
     Then
         Display "You Win!!" << endl;
     Else
