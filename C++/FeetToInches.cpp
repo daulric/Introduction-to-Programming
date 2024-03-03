@@ -2,7 +2,7 @@
 
 using namespace std;
 
-const int inchConversion = 12;
+const int inchConversion = 12; // 1 Foot = 12 Inches
 
 int feetToInches(int feet) {
     return (feet * inchConversion);
