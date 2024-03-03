@@ -2,19 +2,19 @@
 
 using namespace std;
 
-const double inchConversion = 12;
+const int inchConversion = 12;
 
-double feetToInches(double feet) {
+int feetToInches(int feet) {
     return (feet * inchConversion);
 }
 
 int main() {
 
-    double ft_input;
+    int ft_input;
 
     cout << "Enter Number of Feet: ";
     cin >> ft_input;
 
-    double inches = feetToInches(ft_input);
+    int inches = feetToInches(ft_input);
     cout << ft_input << "ft = " << inches << "in";
 }
