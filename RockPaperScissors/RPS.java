@@ -18,8 +18,13 @@ public class RPS implements ActionListener {
     String user_input;
     String computer_input;
 
+    public void EnableButtons(boolean bool) {
+        buttons[0].setEnabled(bool);
+        buttons[1].setEnabled(bool);
+        buttons[2].setEnabled(bool);
+    }
+
     RPS() {
-        
 
         Frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         Frame.setSize(1000, 1000);
@@ -76,6 +81,8 @@ public class RPS implements ActionListener {
             e.printStackTrace();
         }
 
+        EnableButtons(false);
+
         for (int i =0; i <3; i++) {
             computer_label.setText(labels[i]);
 
@@ -85,6 +92,9 @@ public class RPS implements ActionListener {
                 e.printStackTrace();
             }
         }
+
+        EnableButtons(true);
+        computer_label.setText("Choose!");
     }
 
     public void comp_inp() {

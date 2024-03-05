@@ -1,4 +1,5 @@
 // Rock Paper Scissors Game for Final Project!
+// Group Members: Ulric Aird and Kieran Francis
 
 #include <iostream>
 

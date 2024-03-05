@@ -1,4 +1,5 @@
 // Rock Paper Scissors PseudoCode Game for Final Project!
+// Group Members: Ulric Aird and Kieran Francis
 
 Declare String input_val, computer_choice;
 Declare String options[] = {"rock", "paper", "scissors"};
