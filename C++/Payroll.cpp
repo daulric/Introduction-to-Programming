@@ -3,19 +3,11 @@
 using namespace  std;
 
 bool checkPayRange(double input) {
-    if (input >= 7.50 && input <= 18.25 )  {
-        return true;
-    } else {
-        return false;
-    }
+   return (input >= 7.50 && input <= 18.25 );
 }
 
 bool checkHourlyRange(double input) {
-    if (input >= 0 && input <= 40) {
-        return true;
-    } else {
-        return false;
-    }
+    return (input > 0 && input <= 40);
 }
 
 int main() {
