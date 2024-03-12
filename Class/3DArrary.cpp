@@ -3,15 +3,17 @@
 using namespace std;
 
 int main() {
-    int test[3][2] = {
-        {2, -5},
-        {4, 0},
-        {9, 1},
-    };
+    int numbers[3][2];
+
+    for (int i =0; i < 3; i++) {
+        for (int j = 0; j< 2; j++) {
+            cin >> numbers[i][j];
+        }
+    } 
 
     for (int i = 0; i < 3; i++) {
         for (int j = 0; j < 2; j++) {
-            cout << "test[" << i << "][" << j << "] = " << test[i][j] << endl;
+            cout << "numbers[" << i << "][" << j << "] = " << numbers[i][j] << endl;
         } 
     }
 }
