@@ -11,7 +11,7 @@ int main() {
         LottoNumbers[i] = rand() % 10; // We did this get random number below 10
     }
 
-    cout << "========== Lotto Numbers ===========" << endl;
+    cout << "========== Lottery Numbers ===========" << endl;
     // Displaying the Numbers
     for (int i = 0; i < 7; i++) {
         cout << LottoNumbers[i] << endl;
