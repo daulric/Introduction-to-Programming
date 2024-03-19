@@ -4,6 +4,17 @@
 
 using namespace std;
 
+// Bubble Sort Function
+void bubbleSort(int *array, int size) {
+    for (int i = 0; i < size; i++) {
+        for (int j = i+1; j < size; j++) {
+            if (array[i] > array[j]) {
+                swap(array[i], array[j]);
+            }
+        }
+    }
+}
+
 int main() {
 
     int scores[10];
@@ -18,13 +29,7 @@ int main() {
     }
 
     // Sorting the Array in ascending order
-    for (int i = 0; i < sizeArray; i++) {
-        for (int j = i+1; j < 10; j++) {
-            if (scores[i] > scores[j]) {
-                swap(scores[i], scores[j]); // Swapped scores[i] with sccores[j]
-            }
-        }
-    }
+    bubbleSort(scores, sizeArray);
 
     cout << "=========== Ascending Order ============" << endl;
 
