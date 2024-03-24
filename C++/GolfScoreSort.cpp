@@ -15,12 +15,23 @@ void bubbleSort(int *array, int size) {
     }
 }
 
+// Display Sorted Scores Function
+void displayScores(int *array, int sizeArray) {
+    cout << "=========== Ascending Order ============" << endl;
+
+    for (int i = 0; i < sizeArray; i++) {
+        cout << i+1 << ": " << array[i] << endl;
+    }
+
+    cout << "========================================" << endl;
+}
+
 int main() {
 
     int scores[10];
     int temp;
 
-    int sizeArray = (sizeof(scores) / sizeof(*scores)); // This is how you get the length of the array
+    int sizeArray = (sizeof(scores) / sizeof(*scores)); // This is how you get the length of the array because the array size could be any number
 
     // Enter the Scores!
     for (int i = 0; i < sizeArray; i++) {
@@ -31,14 +42,8 @@ int main() {
     // Sorting the Array in ascending order
     bubbleSort(scores, sizeArray);
 
-    cout << "=========== Ascending Order ============" << endl;
-
     // Displaying Sorted Outputs
-    for (int i = 0; i < sizeArray; i++) {
-        cout << i+1 << ": " << scores[i] << endl;
-    }
-
-    cout << "========================================" << endl;
+    displayScores(scores, sizeArray);
 
     return 0;
 }
